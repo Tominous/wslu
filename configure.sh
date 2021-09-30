@@ -78,7 +78,7 @@ function deb_build_prep {
 	sed -i s/DISTROPLACEHOLDER/"$@"/g ./debian/changelog
 	sed -i s/VERSIONPLACEHOLDER/"$(cat ./VERSION)"/g ./debian/changelog
 	sed -i s/DATETIMEPLACEHOLDER/"$(date +'%a, %d %b %Y %T %z')"/g ./debian/changelog
-	#dch --distribution $@ --newversion "$(cat ./VERSION)"
+	dch --distribution $@ --newversion "$(cat ./VERSION)"
 }
 
 function rpm_build_prep {
